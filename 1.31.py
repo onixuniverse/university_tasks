@@ -1,6 +1,6 @@
 import sys
 
-
+# test commit 
 def sum_search():
     n = int(input("Введите целочисленное N: "))
 
