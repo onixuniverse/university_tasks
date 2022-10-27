@@ -2,12 +2,12 @@
 from PIL import Image, ImageDraw
 
 
-def draw_ellipse(draw, coordinates):
-    draw.ellipse(coordinates, fill='red')  # L U R D
+def draw_ellipse(draw, coordinates, color):
+    draw.ellipse(coordinates, fill=color)  # L U R D
 
 
-def draw_polygon(draw, coordinates):
-    draw.polygon(triangle_cords, outline="yellow")  # U L R
+def draw_polygon(draw, coordinates, color):
+    draw.polygon(coordinates, outline=color)  # U L R
 
 
 if __name__ == "__main__":
@@ -22,8 +22,8 @@ if __name__ == "__main__":
         triangle_cords = [(start_cords, start_cords - radius * 2.65),
                           (start_cords - radius - radius // 2, start_cords + radius),
                           (start_cords + radius + radius // 2, start_cords + radius)]  # Y -X +X (X Y)
-        draw_ellipse(draw, ellipse_cords)
-        draw_polygon(draw, triangle_cords)
+        draw_ellipse(draw, ellipse_cords, "red")
+        draw_polygon(draw, triangle_cords, "yellow")
 
         image.save('triangle.png')
     except Exception as exc:
